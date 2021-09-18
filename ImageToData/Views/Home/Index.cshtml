@@ -1,0 +1,39 @@
+﻿@model ImageToData.Models.IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<div class="text-center">
+
+    <h2>Shazamdan ferqlenmeyen amma ses yox image ile seach eden Platformaya xos gelmisen</h2>
+
+    <h3> Altdaki 2 inputlu form hansi sekille hansi datani elaqelendirmek istesen Onlari secirsen</h3>
+    <h3> Free server isletdiyime gore sekillerin olcusu 500kb ve daha artiq oldugu halda BadRequest ile qarsilasacaqsan</h3>
+
+    <form asp-controller="Home" asp-action="Index" enctype="multipart/form-data">
+
+
+        <label>Sekil </label><br />
+        <input asp-for="image"><br />
+        <br /><br />
+        <label>Elaqelendirilecek olan data </label><br />
+        <input asp-for="data"><br />
+        <center><input type="submit" /></center>
+    </form>
+    <br /><br /><br /><br />
+    <h3> Altdaki tek inputlu form ise axtaris etmek ucundur</h3>
+    <h3> Free server isletdiyime gore sekillerin olcusu 500kb ve daha artiq oldugu halda BadRequest ile qarsilasacaqsan</h3>
+    <h3> Sekil uyumlulugu 90% ve ustu olduqda data ucun linki goreceksiniz, eks teqdirde BadRequest</h3>
+    <br /><br />
+
+          <form asp-controller="Home" asp-action="Seach" enctype="multipart/form-data">
+
+
+              <label> Seach edilmesi ucun Sekil </label><br />
+              <input asp-for="seachimage"><br />
+              <br /><br />
+
+              <center><input type="submit" /></center>
+          </form>
+</div>
